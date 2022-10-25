@@ -1,0 +1,2 @@
+# autentificacao_usuario_class_based_views
+Validando a autentificação do usuário utilizando Django
