@@ -1,0 +1,31 @@
+{% extends "base_login.html" %}
+
+{% block conteudo %}
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col col-md-6 col-lg-5 col-xl-4 col-xxl-4">
+                <form method="post" class="mb-3">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Login</label>
+                        <input type="text" name="username" id="username" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-outline-success w-100">Success</button>
+                        </div>
+                    </div>
+                </form>
+                {% for k, v in form.errors.items %}
+                    <div class="alert alert-danger" role="alert">
+                        <p>{{ v }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
